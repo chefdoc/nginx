@@ -7,6 +7,5 @@ RUN chmod +x /run-nginx.sh
 
 EXPOSE 80
 ENV BACKENDS=""
-VOLUME /data
 
 CMD /run-nginx.sh
