@@ -19,17 +19,18 @@ http {
   access_log  /var/log/nginx/access.log  main;
 
   sendfile    on;
-  #tcp_nopush   on;
+  # tcp_nopush   on;
 
   keepalive_timeout  65;
-
   gzip  on;
 
   server {
     listen *;
 
     location / {
-      root /public;
+      # Using a shared data/public directory from chefdoc.info it would be possilbe
+      # to serve static files from nginx.
+      root /data/public;
       try_files $uri $uri.html @backend;
     }
 
